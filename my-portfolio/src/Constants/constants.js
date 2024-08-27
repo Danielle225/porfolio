@@ -90,7 +90,7 @@ const introduction = {
   text: [
     "Salut, je suis très heureuse que vous soyez ici ! ( :",
 
-		"Je m'appelle Danielle, j'ai 23 ans et je suis diplômée en sciences informatiques. Passionnée par les technologies liées au développement d'applications et à l'intelligence artificielle, je suis constamment motivée par les défis technologiques et la création de solutions innovantes.",
+		"Je m'appelle DOMORAUD Danielle Andrea Berthet , j'ai 23 ans et je suis diplômée en sciences informatiques. Passionnée par les technologies liées au développement d'applications et à l'intelligence artificielle, je suis constamment motivée par les défis technologiques et la création de solutions innovantes.",
     "Je suis toujours à la recherche d'opportunités pour appliquer mes compétences, apprendre de nouvelles technologies, et collaborer avec des équipes qui partagent ma vision de créer des expériences exceptionnelles.",
     "Je vous remercie de prendre le temps de visiter mon portfolio, et j'espère que mon travail vous inspirera",
     "N'hésitez pas à télécharger mon CV [ici] et à me contacter pour toute collaboration ou opportunité."

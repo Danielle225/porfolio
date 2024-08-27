@@ -30,7 +30,7 @@ const HeroText = () => {
             whileInView={{ x: 0 }}
             transition={{ duration: 0.6, type: "spring" }}
           >
-            QUI EST-CE{" "}
+            QUI EST{" "}
           </m.span>
           <m.div
             initial={{ x: 100 }}
