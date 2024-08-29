@@ -9,6 +9,7 @@
 
 import { useRef, useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
+import Swal from "sweetalert2";
 import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
@@ -28,7 +29,13 @@ const ContactForm = () => {
         (result) => {
           document.getElementById("contact_form").reset();
           setIsSent(true);
-          alert('Merci, je vous répondrai dans les plus brefs délais ! (:');
+          Swal.fire({
+            title: 'Merci!',
+            text: 'Je vous répondrai dans les plus brefs délais ! (:',
+            icon: 'success',
+            confirmButtonText: 'OK'
+          });
+          
         },
         (error) => {
           console.error(error);
