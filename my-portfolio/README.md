@@ -1,59 +1,61 @@
-# who's DDAB ?
-Welcome to my portfolio repository! This project showcases my skills using React, ESLint, Tailwind, and Vite. It includes a brief introduction about me, my projects, the technologies I've worked with, and my experience. You'll also find a contact form at the bottom and my social media links below it. Feel free to explore and connect with me!
+# Portfolio — Danielle DOMORAUD (DDAB)
 
-<p align="center">
-  <br>
-  <img src="https://i.imgur.com/YjFLrzx.png" alt="wb" width="400">
-  <br>
-</p>
-<p align="center" >
-  <a href="#features">Features</a> •
-  <a href="#Files">Files</a> •
-  <a href="#how-to-use">How To Use</a> •
-  <a href="#packages">Packages</a>   
-</p>
-<p align="center" >
-<a href="https://whosbl33h.netlify.app/">Try it out here</a> 
-</p>
+Bienvenue sur le dépôt de mon portfolio personnel ! Ce projet présente mon parcours, mes projets et mes compétences techniques, avec un formulaire de contact et mes réseaux sociaux.
 
-## Features
-
-* Vite
-```bash
-# Install dependencies
-$ npm i
-# run the app
-$ npm run dev
-```
-
-## Files
-
-- src: the file that implements de solution.
-- assets: resources that are used in an application.
-- components: reusable pieces of code that define the appearance and behavior of a part of the UI.
-- pages: the different areas of the portfolio.
-- constants: values that cannot be altered by the program during normal execution.
-
-
-## How To Use
-
-To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js](https://nodejs.org/en) and [Vite](https://vitejs.dev/) installed on your computer. From your command line:
-
-```bash
-# Clone this repository
-$ git clone git@github.com:EpitechCodingAcademyPromo2024/C-COD-211-ABJ-2-1-hyscv-danielle.domoraud.git
-
-# Install dependencies
-$ npm i
-
-# Run the app
-$ npm run dev
-```
-
-## Packages
-
-This software uses the following open source packages:
+## Stack technique
 
 - [Vite](https://vitejs.dev/)
 - [React](https://reactjs.org/)
-- [Tailwind](https://tailwindcss.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [EmailJS](https://www.emailjs.com/) pour le formulaire de contact
+
+## Démarrage
+
+Prérequis : [Git](https://git-scm.com) et [Node.js](https://nodejs.org/en).
+
+```bash
+# Installer les dépendances
+npm install
+
+# Lancer le serveur de développement
+npm run dev
+
+# Vérifier le code
+npm run lint
+
+# Construire la version de production
+npm run build
+
+# Prévisualiser la version de production
+npm run preview
+```
+
+## Configuration du formulaire de contact
+
+Le formulaire utilise EmailJS. Copiez le fichier `.env.example` en `.env` et renseignez vos identifiants :
+
+```bash
+cp .env.example .env
+```
+
+```env
+VITE_EMAILJS_SERVICE_ID=votre_service_id
+VITE_EMAILJS_TEMPLATE_ID=votre_template_id
+VITE_EMAILJS_PUBLIC_KEY=votre_public_key
+```
+
+Sans ces variables, des valeurs par défaut sont utilisées.
+
+## Structure
+
+- `src/App` : point d'entrée et composant racine.
+- `src/Pages` : les différentes sections du portfolio (Hero, About, Projects, Skills, Contact).
+- `src/Components` : composants réutilisables de l'interface.
+- `src/Constants` : contenu et données (projets, compétences, liens, textes).
+- `src/assets` : images et icônes.
+- `public` : polices, CV et textures servis tels quels.
+
+## Crédits
+
+Design initial inspiré du template open-source de [Sara Echeverria (bl33h)](https://github.com/bl33h).

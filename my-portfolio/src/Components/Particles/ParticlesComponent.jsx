@@ -7,25 +7,24 @@
    Last modification: 02/06/2023
 */
 
-import { useCallback } from "react";
+import { useCallback, useRef } from "react";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 
 const ParticlesComponent = (props) => {
   const { particlesOptions, className, id } = props;
 
-  let isInitialized = false;
+  const isInitialized = useRef(false);
 
   const particlesInit = useCallback(async (engine) => {
-    if(!isInitialized) {
+    if (!isInitialized.current) {
       await loadFull(engine);
-      isInitialized = true;
+      isInitialized.current = true;
     }
-
   }, []);
 
   const particlesLoaded = useCallback(async (container) => {
-      await container
+    await container;
   }, []);
 
   return (

@@ -1,39 +1,23 @@
-/*
-   Copyright (C), 2023-2024, Sara Echeverria (bl33h)
-   Author: Sara Echeverria
-   FileName: Skills.jsx
-   Version: I
-   Creation: 02/06/2023
-   Last modification: 03/06/2023
-*/
-
-import MarqueeCards from "../Components/MarqueeCards";
+import { LazyMotion, domAnimation } from "framer-motion";
 import SectionTitle from "../Components/SectionTitle";
 import SkillsCards from "../Components/SkillsCards";
+import { skillGroups } from "../Constants/constants";
 
 const Skills = () => {
   return (
-    <div id="skills" className="w-full overflow-hidden-web flex justify-center">
-      <div className="w-full min-h-[800px] flex flex-col xl:w-[70%]">
-        <div className="w-full">
-          <SectionTitle title="Competences" subtitle="CE QUE JE FAIS" />
-        </div>
-        <div className="xl:border-l-2 xl:border-r-2 xl:border-primary-400 h-full">
-          <div className="relative">
-            <div className="absolute top-[45px] w-full h-[1px] bg-primary-400"></div>
-            <MarqueeCards direction="left">
-              <SkillsCards />
-            </MarqueeCards>
+    <section id="skills" className="w-full py-20 sm:py-28">
+      <div className="section-inner">
+        <SectionTitle title="Compétences" subtitle="Ce que je maîtrise" />
+
+        <LazyMotion features={domAnimation} strict>
+          <div className="grid gap-6 sm:grid-cols-2">
+            {skillGroups.map((group, index) => (
+              <SkillsCards key={group.id} group={group} index={index} />
+            ))}
           </div>
-          <div className="relative">
-            <div className="absolute top-[45px] w-full h-[1px] bg-primary-400"></div>
-            <MarqueeCards direction="right">
-              <SkillsCards />
-            </MarqueeCards>
-          </div>
-        </div>
+        </LazyMotion>
       </div>
-    </div>
+    </section>
   );
 };
 

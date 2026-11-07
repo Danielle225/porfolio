@@ -1,105 +1,15 @@
-/*
-   Copyright (C), 2023-2024, Sara Echeverria (bl33h)
-   Author: Sara Echeverria
-   FileName: ProjectCards.jsx
-   Version: I
-   Creation: 02/06/2023
-   Last modification: 19/04/2024
-*/
-
 import { motion } from "framer-motion";
-import { Tilt } from "react-tilt";
 import { projects } from "../Constants/constants";
 import { githubIcon } from "../assets";
 
-export const staggerContainer = (staggerChildren, delayChildren) => {
-	return {
-		hidden: {},
-		show: {
-			transition: {
-				staggerChildren: staggerChildren,
-				delayChildren: delayChildren || 0,
-			},
-		},
-	};
-};
-
-export const textVariant = (delay) => {
-	return {
-		hidden: {
-			y: -50,
-			opacity: 0,
-		},
-		show: {
-			y: 0,
-			opacity: 1,
-			transition: {
-				type: "spring",
-				duration: 1.25,
-				delay: delay,
-			},
-		},
-	};
-};
-
-export const fadeIn = (direction, type, delay, duration) => {
-	return {
-		hidden: {
-			x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
-			y: direction === "up" ? 100 : direction === "down" ? -100 : 0,
-			opacity: 0,
-		},
-		show: {
-			x: 0,
-			y: 0,
-			opacity: 1,
-			transition: {
-				type: type,
-				delay: delay,
-				duration: duration,
-				ease: "easeOut",
-			},
-		},
-	};
-};
-
-export const zoomIn = (delay, duration) => {
-	return {
-		hidden: {
-			scale: 0,
-			opacity: 0,
-		},
-		show: {
-			scale: 1,
-			opacity: 1,
-			transition: {
-				type: "tween",
-				delay: delay,
-				duration: duration,
-				ease: "easeOut",
-			},
-		},
-	};
-};
-
-export const slideIn = (direction, type, delay, duration) => {
-	return {
-		hidden: {
-			x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,
-			y: direction === "up" ? "100%" : direction === "down" ? "100%" : 0,
-		},
-		show: {
-			x: 0,
-			y: 0,
-			transition: {
-				type: type,
-				delay: delay,
-				duration: duration,
-				ease: "easeOut",
-			},
-		},
-	};
-};
+const fadeIn = (delay) => ({
+  hidden: { y: 24, opacity: 0 },
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.5, delay, ease: "easeOut" },
+  },
+});
 
 const ProjectCard = ({
   index,
@@ -110,66 +20,76 @@ const ProjectCard = ({
   demo_link,
 }) => {
   return (
-      <Tilt
-          options={{
-              max: 40,
-              scale: 1,
-              speed: 450,
-          }}
-          className="shadow-2xl p-5 rounded-lg sm:w-[300px] w-[100%]"
-      >
-          <motion.div
-              variants={fadeIn("up", "spring", index * 0.5, 0.75)}
-          >
-              <div className="relative">
-                  <img
-                      src={image}
-                      alt={name}
-                      className="w-full h-full md:h-[200px] object-cover rounded-lg relative"
-                  />
-                  <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-                      <div
-                          onClick={() => window.open(source_code_link, "_blank")}
-                          className="w-8 h-8 rounded-full flex justify-center items-center cursor-pointer"
-                      >
-                          <img
-                              src={githubIcon}
-                              alt="github"
-                              className="w-full h-full object-contain"
-                          />
-                      </div>
-                  </div>
-              </div>
+    <motion.article
+      variants={fadeIn(index * 0.06)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+      className="group flex w-full flex-col overflow-hidden rounded-2xl border border-line bg-card shadow-panel transition-all duration-300 hover:-translate-y-1 hover:shadow-soft"
+    >
+      <div className="relative aspect-[16/10] overflow-hidden bg-surface">
+        <img
+          src={image}
+          alt={name}
+          loading="lazy"
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+        />
+      </div>
 
-              <div className="mt-3">
-                  <h3 className="text-white font-bold text-2xl">{name}</h3>
-                  <p className="mt-2 text-secondary text-[14px] leading-snug">
-                      {description}
-                  </p>
-              </div>
-              <div className="mt-2 flex flex-wrap gap-1"></div>
-              <div className="mt-3 flex justify-center items-center">
-                  <a
-                      className="shadow-md shadow-primary p-2 bg-tertiary rounded-lg flex justify-center"
-                      href={demo_link}
-                      target="_blank"
-                  >
-                      Voir la demo
-                  </a>
-              </div>
-          </motion.div>
-      </Tilt>
+      <div className="flex flex-1 flex-col p-5">
+        <div className="flex items-start justify-between gap-3">
+          <h3 className="text-lg font-semibold text-ink">{name}</h3>
+          {source_code_link && (
+            <a
+              href={source_code_link}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Voir le code source de ${name}`}
+              className="shrink-0 rounded-full p-1.5 transition-colors hover:bg-primary-500/10"
+            >
+              <img
+                src={githubIcon}
+                alt=""
+                className="h-5 w-5 object-contain"
+              />
+            </a>
+          )}
+        </div>
+
+        <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
+          {description}
+        </p>
+
+        {demo_link && (
+          <a
+            href={demo_link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-primary-400 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-600"
+          >
+            Voir la démo
+            <span aria-hidden="true">↗</span>
+          </a>
+        )}
+      </div>
+    </motion.article>
   );
 };
 
 const Works = () => {
-    return (
-        <div className="mt-5 flex flex-wrap justify-center gap-4 text-grayscale-50 w-full">
-            {projects.map((project, index) => (
-                <ProjectCard key={`project-${index}`} index={index} {...project} />
-            ))}
-        </div>
-    );
+  const sortedProjects = [...projects].sort((a, b) => {
+    const aHasDemo = a.demo_link ? 1 : 0;
+    const bHasDemo = b.demo_link ? 1 : 0;
+    return bHasDemo - aHasDemo;
+  });
+
+  return (
+    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {sortedProjects.map((project, index) => (
+        <ProjectCard key={project.name} index={index} {...project} />
+      ))}
+    </div>
+  );
 };
 
 export default Works;

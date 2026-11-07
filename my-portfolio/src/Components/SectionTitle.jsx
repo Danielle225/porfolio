@@ -1,45 +1,26 @@
-/*
-   Copyright (C), 2023-2024, Sara Echeverria (bl33h)
-   Author: Sara Echeverria
-   FileName: SectionTitle.jsx
-   Version: I
-   Creation: 02/06/2023
-   Last modification: 03/06/2023
-*/
-
 import { m, LazyMotion, domAnimation } from "framer-motion";
 
-const SectionTitle = (props) => {
-  const { title, subtitle } = props;
-
+const SectionTitle = ({ title, subtitle }) => {
   return (
-    <LazyMotion features={domAnimation} strict> 
+    <LazyMotion features={domAnimation} strict>
       <m.div
-        initial={{ x: -350 }}
-        whileInView={{ x: 0 }}
-        transition={{ duration: 0.6, type: "spring" }}
-        className="text-primary-400 p-6 noselect"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="mb-10 sm:mb-14"
       >
-        <span
-          className="opacity-50"
-          style={{
-            textTransform: "uppercase",
-            fontFamily: "Poppins, sans-serif",
-            fontWeight: "600",
-          }}
-        >
-          {subtitle}
-        </span>
-        <h2
-          className="tracking-wider text-7xl sm:text-8xl md:text-9xl"
-          style={{ fontFamily: "Morganite Black"}}
-        >
-          {title.split("").map((char, index) => {
-            if(char === " ") {
-              return " ";
-            }
-            return <span key={index} className="bounce">{char}</span>
-          })}
+        {subtitle && (
+          <span className="eyebrow">
+            <span
+              aria-hidden="true"
+              className="h-px w-8 bg-primary-400/60"
+            />
+            {subtitle}
+          </span>
+        )}
+        <h2 className="mt-4 font-morganite text-5xl leading-none tracking-tight text-ink sm:text-6xl md:text-7xl">
+          {title}
         </h2>
       </m.div>
     </LazyMotion>

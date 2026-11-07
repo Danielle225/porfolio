@@ -23,6 +23,7 @@ import gitIcon from './tech/git.png';
 import githubIcon from './tech/github.png';
 import figmaIcon from './tech/figma.png';
 import psqlIcon from './tech/mongod.png';
+import postgresIcon from './tech/postgresql.png';
 import eslintIcon from './tech/eslint.png';
 import viteIcon from './tech/vue.png';
 import pyIcon from './tech/py.png';
@@ -39,6 +40,8 @@ import postit from './projects/postit.png';
 import trellotech from './projects/Trellotech.png';
 import trello from './projects/trello.png';
 import Yowl from './projects/yowl.png';
+import bricabrac from './projects/bricabrac.svg';
+import gestionHotel from './projects/gestion-hotel.svg';
 
 // Avatar
 import avatar from './avatar/avatar.jpg';
@@ -59,6 +62,7 @@ export {
   eslintIcon,
   figmaIcon,
   psqlIcon,
+  postgresIcon,
   nodeIcon,
   pyIcon,
   viteIcon,
@@ -70,6 +74,8 @@ export {
   trello,
   postit,
   Yowl,
+  bricabrac,
+  gestionHotel,
   avatar,
   bl33hIcon,
 };

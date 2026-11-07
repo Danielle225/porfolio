@@ -1,30 +1,45 @@
-/*
-   Copyright (C), 2023-2024, Sara Echeverria (bl33h)
-   Author: Sara Echeverria
-   FileName: PreloadMedia.jsx
-   Version: I
-   Creation: 02/06/2023
-   Last modification: 03/06/2023
-*/
+import { useEffect, useState } from "react";
+import Loader from "./Loader";
 
-import {useState} from 'react'
-import Loader from './Loader';
-
-const PreloadMedia = ({images, children}) => {
+const PreloadMedia = ({ images, children }) => {
   const [loaded, setLoaded] = useState(false);
 
-  const onLoad = () => {
-    setLoaded(true);
-  }
+  useEffect(() => {
+    const sources = images.filter(Boolean);
 
-  const imageElements = images.map((imageSrc) => {
-    const img = new Image();
-    img.src = imageSrc;
-    img.onload = onLoad;
-    return img;
-  });
+    if (sources.length === 0) {
+      setLoaded(true);
+      return undefined;
+    }
 
-  return loaded ? children : <Loader />
-}
+    let cancelled = false;
+    let remaining = sources.length;
+
+    const handleSettled = () => {
+      remaining -= 1;
+      if (remaining <= 0 && !cancelled) {
+        setLoaded(true);
+      }
+    };
+
+    const imageElements = sources.map((src) => {
+      const img = new Image();
+      img.onload = handleSettled;
+      img.onerror = handleSettled;
+      img.src = src;
+      return img;
+    });
+
+    return () => {
+      cancelled = true;
+      imageElements.forEach((img) => {
+        img.onload = null;
+        img.onerror = null;
+      });
+    };
+  }, [images]);
+
+  return loaded ? children : <Loader />;
+};
 
 export default PreloadMedia;

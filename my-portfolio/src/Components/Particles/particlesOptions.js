@@ -35,30 +35,6 @@ export const heroOptions = {
           type: 'circle',
         },
         {
-          selectors: '#repulse-span',
-          enable: true,
-          mode: 'repulse',
-          type: 'circle',
-        },
-        {
-          selectors: '#repulse-span',
-          enable: true,
-          mode: 'bounce',
-          type: 'circle',
-        },
-        {
-          selectors: '#togglebutton',
-          enable: true,
-          mode: 'repulse',
-          type: 'circle',
-        },
-        {
-          selectors: '#togglebutton',
-          enable: true,
-          mode: 'bounce',
-          type: 'circle',
-        },
-        {
           selectors: '#scroller',
           enable: true,
           mode: 'repulse',
