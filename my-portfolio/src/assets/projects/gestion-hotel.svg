@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="Gestion Hotel illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#EEF2FF"/>
+      <stop offset="100%" stop-color="#DBEAFE"/>
+    </linearGradient>
+    <linearGradient id="tower" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#4338CA"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F8FAFC"/>
+    </linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#818CF8"/>
+      <stop offset="100%" stop-color="#4F46E5"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#312E81" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bg)"/>
+
+  <circle cx="160" cy="130" r="80" fill="#C7D2FE" opacity="0.6"/>
+  <circle cx="1080" cy="120" r="55" fill="#BFDBFE" opacity="0.7"/>
+  <circle cx="1090" cy="700" r="120" fill="#C7D2FE" opacity="0.4"/>
+
+  <g filter="url(#shadow)">
+    <rect x="140" y="230" width="360" height="430" rx="26" fill="url(#tower)"/>
+  </g>
+  <g fill="#C7D2FE">
+    <rect x="185" y="280" width="55" height="55" rx="8"/>
+    <rect x="270" y="280" width="55" height="55" rx="8"/>
+    <rect x="355" y="280" width="55" height="55" rx="8"/>
+    <rect x="440" y="280" width="25" height="55" rx="8"/>
+    <rect x="185" y="370" width="55" height="55" rx="8"/>
+    <rect x="270" y="370" width="55" height="55" rx="8"/>
+    <rect x="355" y="370" width="55" height="55" rx="8"/>
+    <rect x="440" y="370" width="25" height="55" rx="8"/>
+    <rect x="185" y="460" width="55" height="55" rx="8"/>
+    <rect x="270" y="460" width="55" height="55" rx="8"/>
+    <rect x="355" y="460" width="55" height="55" rx="8"/>
+    <rect x="440" y="460" width="25" height="55" rx="8"/>
+    <rect x="185" y="550" width="55" height="55" rx="8"/>
+    <rect x="270" y="550" width="55" height="55" rx="8"/>
+    <rect x="355" y="550" width="55" height="55" rx="8"/>
+    <rect x="440" y="550" width="25" height="55" rx="8"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="540" y="180" width="520" height="490" rx="30" fill="url(#panel)"/>
+  </g>
+
+  <rect x="580" y="215" width="200" height="20" rx="10" fill="#E2E8F0"/>
+  <rect x="580" y="215" width="120" height="20" rx="10" fill="#6366F1"/>
+
+  <text x="580" y="300" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#1E293B">Gestion Résidence</text>
+  <text x="580" y="340" font-family="Arial, sans-serif" font-size="22" fill="#64748B">Back-office de gestion</text>
+
+  <g>
+    <rect x="580" y="380" width="210" height="120" rx="18" fill="#EEF2FF"/>
+    <text x="610" y="430" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#4338CA">128</text>
+    <text x="610" y="465" font-family="Arial, sans-serif" font-size="18" fill="#6366F1">Chambres</text>
+
+    <rect x="810" y="380" width="210" height="120" rx="18" fill="#ECFDF5"/>
+    <text x="840" y="430" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#047857">76%</text>
+    <text x="840" y="465" font-family="Arial, sans-serif" font-size="18" fill="#10B981">Occupation</text>
+  </g>
+
+  <g>
+    <rect x="580" y="530" width="440" height="110" rx="18" fill="#F8FAFC"/>
+    <rect x="610" y="575" width="34" height="40" rx="6" fill="#6366F1"/>
+    <rect x="655" y="550" width="34" height="65" rx="6" fill="#818CF8"/>
+    <rect x="700" y="565" width="34" height="50" rx="6" fill="#6366F1"/>
+    <rect x="745" y="535" width="34" height="80" rx="6" fill="#4F46E5"/>
+    <rect x="790" y="558" width="34" height="57" rx="6" fill="#818CF8"/>
+    <rect x="835" y="545" width="34" height="70" rx="6" fill="#6366F1"/>
+    <rect x="880" y="525" width="34" height="90" rx="6" fill="#4F46E5"/>
+    <rect x="925" y="565" width="34" height="50" rx="6" fill="#818CF8"/>
+  </g>
+
+  <g transform="translate(870 210)" filter="url(#shadow)">
+    <rect x="0" y="0" width="140" height="90" rx="14" fill="url(#sky)"/>
+    <circle cx="40" cy="45" r="20" fill="#FDE68A"/>
+    <rect x="78" y="30" width="44" height="10" rx="5" fill="#E0E7FF"/>
+    <rect x="78" y="50" width="30" height="10" rx="5" fill="#C7D2FE"/>
+  </g>
+
+  <g transform="translate(200 620)">
+    <rect x="0" y="0" width="150" height="40" rx="20" fill="#4338CA"/>
+    <text x="75" y="27" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">Réception</text>
+  </g>
+</svg>

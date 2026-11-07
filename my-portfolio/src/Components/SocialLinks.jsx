@@ -1,37 +1,45 @@
-/*
-   Copyright (C), 2023-2024, Sara Echeverria (bl33h)
-   Author: Sara Echeverria
-   FileName: SocialLinks.jsx
-   Version: I
-   Creation: 02/06/2023
-   Last modification: 03/06/2023
-*/
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icons } from "../Constants/constants";
 
+const links = [
+  {
+    label: "GitHub",
+    href: "https://github.com/Danielle225",
+    icon: icons.faGithub,
+    external: true,
+  },
+  {
+    label: "Envoyer un e-mail",
+    href: "mailto:danielle.domoraud@epitech.eu",
+    icon: icons.faEnvelope,
+    external: false,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/danielle-domoraud/",
+    icon: icons.faLinkedin,
+    external: true,
+  },
+];
+
 const SocialLinks = () => {
   return (
-    <div className="w-full h-[100px] bg-grayscale-950 flex justify-center items-center gap-3 p-6">
-      <a href="https://github.com/Danielle225" target="_blank">
-        <FontAwesomeIcon
-          className="text-3xl text-grayscale-25 hover:text-primary-200 hover:scale-[1.1] transition-all duration-75"
-          icon={icons.faGithub}
-        />
-      </a>
-      <a href="mailto:danielle.domoraud@epitech.eu" target="_blank">
-        <FontAwesomeIcon
-          className="text-3xl text-grayscale-25 hover:text-primary-200 hover:scale-[1.1] transition-all duration-75"
-          icon={icons.faEnvelope}
-        />
-      </a>
-      <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank">
-        <FontAwesomeIcon
-          className="text-3xl text-grayscale-25 hover:text-primary-200 hover:scale-[1.1] transition-all duration-75"
-          icon={icons.faLinkedin}
-        />
-      </a>
-    </div>
+    <ul className="flex items-center gap-2">
+      {links.map((link) => (
+        <li key={link.label}>
+          <a
+            href={link.href}
+            aria-label={link.label}
+            {...(link.external
+              ? { target: "_blank", rel: "noopener noreferrer" }
+              : {})}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line bg-card text-muted transition-all duration-300 hover:border-primary-400 hover:text-primary-400"
+          >
+            <FontAwesomeIcon icon={link.icon} className="h-4 w-4" />
+          </a>
+        </li>
+      ))}
+    </ul>
   );
 };
 

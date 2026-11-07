@@ -34,6 +34,7 @@ import {
   gitIcon,
   githubIcon,
   psqlIcon,
+  postgresIcon,
   eslintIcon,
   pyIcon,
   viteIcon,
@@ -47,6 +48,8 @@ import {
   Yowl,
   trello,
   postit,
+  bricabrac,
+  gestionHotel,
   avatar,
 } from '../assets';
 
@@ -64,6 +67,7 @@ const media = {
   gitIcon,
   githubIcon,
   psqlIcon,
+  postgresIcon,
   eslintIcon,
   pyIcon,
   viteIcon,
@@ -88,19 +92,22 @@ const icons = {
 
 const introduction = {
   text: [
-    "Salut, je suis très heureuse que vous soyez ici ! ( :",
-
-		"Je m'appelle DOMORAUD Danielle Andrea Berthet , j'ai 23 ans et je suis diplômée en sciences informatiques. Passionnée par les technologies liées au développement d'applications et à l'intelligence artificielle, je suis constamment motivée par les défis technologiques et la création de solutions innovantes.",
-    "Je suis toujours à la recherche d'opportunités pour appliquer mes compétences, apprendre de nouvelles technologies, et collaborer avec des équipes qui partagent ma vision de créer des expériences exceptionnelles.",
-    "Je vous remercie de prendre le temps de visiter mon portfolio, et j'espère que mon travail vous inspirera",
-    "N'hésitez pas à télécharger mon CV [ici] et à me contacter pour toute collaboration ou opportunité."
+    "Bonjour, moi c'est Danielle Domoraud.",
+    "Je suis développeuse Fullstack, avec une forte orientation Backend et une formation en sciences informatiques.",
+    "J'interviens dans la conception et le développement d'applications web, de solutions métier et d'API. J'accorde une attention particulière à la logique métier, à l'architecture logicielle, à la structuration des données et à l'intégration des systèmes.",
+    "Au fil de mes expériences, j'ai eu l'occasion de travailler sur différents projets, de collaborer avec des équipes techniques et de contribuer à la mise en place de solutions répondant à des besoins concrets.",
+    "Ma vision du développement : au-delà du code, je cherche à comprendre les problématiques, concevoir des solutions cohérentes et construire des applications utiles, évolutives et maintenables.",
   ],
 };
 
 export const navLinks = [
   {
     id: 'about',
-    title: 'A propos',
+    title: 'À propos',
+  },
+  {
+    id: 'experiences',
+    title: 'Expériences',
   },
   {
     id: 'projects',
@@ -108,7 +115,7 @@ export const navLinks = [
   },
   {
     id: 'skills',
-    title: 'Competences',
+    title: 'Compétences',
   },
   {
     id: 'contact',
@@ -116,7 +123,45 @@ export const navLinks = [
   },
 ];
 
+const experiences = [
+  {
+    role: 'Développement & architecture de chatbot',
+    company: 'Orange CI',
+    description:
+      "Conception et développement d'un chatbot, de l'architecture à l'intégration des flux conversationnels.",
+    tags: ['Architecture', 'Chatbot', 'Intégration'],
+  },
+  {
+    role: 'Développement Fullstack & Backend',
+    company: 'Projets & missions',
+    description:
+      "Conception d'applications web et d'API, avec un focus sur la logique métier, la structuration des données et l'architecture logicielle.",
+    tags: ['API', 'Backend', 'Base de données'],
+  },
+  {
+    role: 'Intégration IT',
+    company: 'Poste actuel',
+    description:
+      'Intégration de systèmes et de solutions techniques en collaboration avec les équipes projets.',
+    tags: ['Intégration', 'Systèmes'],
+  },
+];
+
 const projects = [
+  {
+    name: 'Gestion Résidence',
+    description: `Back-office de gestion de résidence/hôtel permettant d'administrer les chambres, les réservations, les clients et le suivi du taux d'occupation.`,
+    image: gestionHotel,
+    // source_code_link: 'https://github.com/Danielle225',
+    demo_link: 'https://gestion-residence-front-wumw.vercel.app/login',
+  },
+  {
+    name: 'Bric-à-Brac',
+    description: `Plateforme d'une association permettant d'enregistrer les cotisations mensuelles et spéciales de chaque membre, de suivre les paiements et de générer des rapports.`,
+    image: bricabrac,
+    // source_code_link: 'https://github.com/Danielle225',
+    demo_link: 'https://bric-abrac.vercel.app/',
+  },
   {
     name: "Yowl",
     description: `Création d'un réseau social permettant aux utilisateurs de commenter sans restriction.`,
@@ -159,151 +204,73 @@ const projects = [
     // source_code_link: 'https://github.com/bl33h/exploringTheSpace',
     demo_link: 'https://show-time-f5r8.onrender.com/'
   },
-  // {
-  //   name: 'Disney Plus Replica',
-  //   description: 'A replica of the Disney+ principal page built using React and Vite. The Vitest and Storybook technologies were also implemented for testing.',
-  //   image: "https://camo.githubusercontent.com/5d85ae990f2b7b9a0f4d6246168b7995fc930d59d127a15c3c4ea18eb2a5001b/68747470733a2f2f6c756d696572652d612e616b616d616968642e6e65742f76312f696d616765732f65735f686f7573652d6f662d6469736e65792d706c75735f6d6f625f6d5f35376437663836652e6a7065673f726567696f6e3d302c302c3830302c3630302677696474683d373638",
-  //   source_code_link: 'https://github.com/bl33h/disneyPlusReplica',
-  //   demo_link: 'https://disneyplusreplica.netlify.app',
-  // },
-  // {
-  //   name: 'Deep Dive Odyssey Raycasting',
-  //   description: 'The code represents a raycasting graphics application with a Finding Pirate Treasure Under the Sea theme. It creates a 3D perspective effect by simulating rays of light and their interactions with a map.',
-  //   image: "https://camo.githubusercontent.com/94f800b79d759c06717af7d816a16ccff75a0101c942ca9ad3c562d0dd2c9404/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f76312e59326c6b505463354d4749334e6a45784f4870736432527a5a575a6a616e4e366547513364473172616e64755a576b306457357262336f79596d527964584636646a413264535a6c634431324d563970626e526c636d35686246396e61575a66596e6c666157516d593351395a772f634b4c57543837305a4a39587769706e57772f67697068792e676966",
-  //   source_code_link: 'https://github.com/bl33h/deepDiveOdysseyRaycasting',
-  //   demo_link: 'https://camo.githubusercontent.com/94f800b79d759c06717af7d816a16ccff75a0101c942ca9ad3c562d0dd2c9404/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f76312e59326c6b505463354d4749334e6a45784f4870736432527a5a575a6a616e4e366547513364473172616e64755a576b306457357262336f79596d527964584636646a413264535a6c634431324d563970626e526c636d35686246396e61575a66596e6c666157516d593351395a772f634b4c57543837305a4a39587769706e57772f67697068792e676966',
-  // },
-  // {
-  //   name: 'Fibonacci & Factorial',
-  //   description: 'A project that includes two LISP programs: one for factorials and the other for Fibonacci sequences. They use recursion, prompt user input, and display results efficiently.',
-  //   image: "https://i.pinimg.com/originals/96/c3/9a/96c39a5cb89092760fe11f355a32f4a4.gif",
-  //   source_code_link: 'https://github.com/bl33h/fibonacciAndFactorial',
-  //   demo_link: 'https://camo.githubusercontent.com/59b3c9969f369559fbeb1ed6a53f159e0e83b1151b82552b5b2165c4e9686e89/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f312f31612f4669626f6e616363695f63616c6c5f747265655f352e676966',
-  // }
 ];
 
 const memoji = {
   image: [avatar],
 };
 
-const skills = [
+const skillGroups = [
   {
-    id: 'html',
-    title: 'HTML',
-    icon: htmlIcon,
+    id: 'backend',
+    title: 'Backend & API',
+    icon: 'server',
     description:
-      'Je maîtrise parfaitement le langage HTML pour organiser des pages web et générer un contenu significatif accessible à tous les utilisateurs.',
+      "Conception d'APIs et de services robustes, de la logique métier à l'architecture.",
+    technologies: [
+      'Node.js',
+      'NestJS',
+      'Flask',
+      'Python',
+      'API REST',
+      'JWT',
+      'Architecture logicielle',
+    ],
   },
   {
-    id: 'css',
-    title: 'CSS',
-    icon: cssIcon,
+    id: 'frontend',
+    title: 'Frontend',
+    icon: 'layout',
     description:
-    `Je possède une expertise dans l'utilisation des CSS pour concevoir des pages web et créer des mises en page visuellement captivantes qui améliorent l'expérience globale de l'utilisateur.`,
+      'Interfaces modernes, responsives et accessibles, pensées pour l’usage.',
+    technologies: [
+      'React',
+      'Next.js',
+      'Vue.js',
+      'TypeScript',
+      'JavaScript',
+      'Tailwind CSS',
+    ],
   },
   {
-    id: 'javascript',
-    title: 'JavaScript',
-    icon: jsIcon,
+    id: 'database',
+    title: 'Bases de données',
+    icon: 'database',
     description:
-    `J'ai une grande expérience de l'utilisation de JavaScript pour introduire de l'interactivité et des fonctionnalités dans les pages web, ce qui permet de créer des interfaces utilisateur dynamiques.`,
-  }, {
-    id: 'javascript',
-    title: 'Nestjs',
-    icon: nestIcon,
-    description:
-    `J'ai une grande expérience de l'utilisation de JavaScript pour introduire de l'interactivité et des fonctionnalités dans les pages web, ce qui permet de créer des interfaces utilisateur dynamiques.`,
-  },{
-    id: 'javascript',
-    title: 'Nextjs',
-    icon: nextIcon,
-    description:
-    `J'ai une grande expérience de l'utilisation de JavaScript pour introduire de l'interactivité et des fonctionnalités dans les pages web, ce qui permet de créer des interfaces utilisateur dynamiques.`,
+      'Structuration, modélisation et exploitation fiable des données.',
+    technologies: [
+      'PostgreSQL',
+      'MongoDB',
+      'SQL',
+      'Modélisation des données',
+    ],
   },
   {
-    id: 'react',
-    title: 'React',
-    icon: reactIcon,
+    id: 'tools',
+    title: 'Outils & Collaboration',
+    icon: 'tools',
     description:
-      `Je connais bien React, je sais créer des composants réutilisables et gérer l'état de l'application à l'aide de crochets et de contextes.`,
-  }, {
-    id: 'react',
-    title: 'React-native',
-    icon: reactIcon,
-    description:
-      `Avec React-native,j'ai developpé le clone de trello en mobile .`,
-  },
-
-
-  {
-    id: 'figma',
-    title: 'Figma',
-    icon: figmaIcon,
-    description:
-    'Dans le cadre de mes compétences Figma, je libère ma créativité en concevant des interfaces utilisateur captivantes et en collaborant de manière transparente avec les concepteurs et les développeurs.',
-  },
-  {
-    id: 'git',
-    title: 'Git',
-    icon: gitIcon,
-    description:
-    'Je maîtrise Git, la gestion des modifications de code, la collaboration avec les autres et la résolution efficace des conflits.',
-  },
-  {
-    id: 'github',
-    title: 'GitHub',
-    icon: githubIcon,
-    description:
-      'Je sais utiliser GitHub pour une collaboration transparente sur les projets, le partage de code et le suivi des problèmes. Grâce à GitHub, je peux créer et gérer efficacement des référentiels et présenter mon travail à des employeurs potentiels',
-  },
-  {
-    id: 'mongod',
-    title: 'Mongodb',
-    icon: psqlIcon,
-    description:
-      `J'ai une solide maîtrise de MongoDB, couvrant un large éventail de compétences telles que la connexion avec des interfaces front-end.`,
-  },
-  {
-    id: 'vue',
-    title: 'Vue',
-    icon: viteIcon,
-    description:
-      `J'ai acquis une expérience considérable en travaillant avec Vue pendant 1 mois, en tirant parti de ses capacités pour construire des sites Web  et les déployer de manière transparente sur des plates-formes telles que Netlify et vercel.`,
-  },
-  {
-    id: 'py',
-    title: 'Python',
-    icon: pyIcon,
-    description:
-      'Je sais coder des fonctions et créer des interfaces graphiques en utilisant Tkinter et Flask.',
-  },
-  {
-    id: 'node',
-    title: 'Node',
-    icon: nodeIcon,
-    description:
-      `Lorsqu'il s'agit de créer des applications web, je préfère utiliser Node comme environnement d'exécution plutôt que Yarn. J'ai de l'expertise dans l'utilisation de Node.js pour développer des applications web puissantes et évolutives.`,
-  },
-  {
-    id: 'eslint',
-    title: 'Eslint',
-    icon: eslintIcon,
-    description:
-      `J'utilise ESLint pour identifier et résoudre les problèmes de code, ainsi que pour normaliser la structure de mes projets. Avec ESLint, je garantis la qualité et la cohérence du code tout au long de mon processus de développement.`,
+      "Versioning, tests d'API et collaboration avec les équipes design.",
+    technologies: ['Git', 'GitHub', 'Postman', 'Figma'],
   },
 ];
-
-const markerSvg = `<svg viewBox="-4 0 36 36">
-    <path fill="currentColor" d="M14,0 C21.732,0 28,5.641 28,12.6 C28,23.963 14,36 14,36 C14,36 0,24.064 0,12.6 C0,5.641 6.268,0 14,0 Z"></path>
-    <circle fill="black" cx="14" cy="14" r="7"></circle>
-  </svg>`;
 
 export {
   media,
   introduction,
   projects,
+  experiences,
   memoji,
-  skills,
-  markerSvg,
+  skillGroups,
   icons,
 };
